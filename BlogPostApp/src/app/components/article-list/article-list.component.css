@@ -1,0 +1,8 @@
+li{
+    list-style-type:none;
+  }
+.all-blogs{
+    background-color: #f9ff60;
+background-image: linear-gradient(315deg, #fff 48%, #f0cf3b 40%);
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

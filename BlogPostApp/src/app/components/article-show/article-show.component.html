@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <div class="card" *ngIf="currentArticle">
+      <div class="card-header">
+          <!-- BUTTONS FOR REDIRECTING PAGES -->
+          <span class="h4">{{currentArticle.title}}</span>
+          <button class="btn alert-danger btn-sm ms-2 mr-2" (click)="likeArticle(currentArticle._id)"> Like<i class="fa fa-thumbs-up"></i></button>
+          <div class="text-muted mb-2">
+            {{currentArticle.createdAt.slice(0,10)}}
+            <i class="fa fa-heart border p-1 text-danger" aria-hidden="true"> {{ currentArticle.likes }} </i>
+        </div> 
+          <!-- END -->
+      </div>
+      <div class="card-body">
+          <h5 class="card-title"></h5>
+          <!-- FORM TO SUBMIT LIKE RESPONSE -->
+          <!-- END-->
+
+          <h6 class="mt-5">Description</h6>
+          <hr>
+          <p class="card-text">{{ currentArticle.content }}</p>
+      </div>
+      <div class="card-footer text-muted">
+        <a class=" btn btn-success" routerLink="/articles/{{currentArticle._id}}">
+          Edit
+        </a>
+      </div>
+  </div>
+</div>

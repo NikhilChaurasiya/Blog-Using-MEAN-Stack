@@ -1,0 +1,36 @@
+  <div class="container">
+    <!-- NEW BLOG SECTION -->
+    <div class="col-sm-3 float-start">
+      <div class="jumbotron mt-5">
+        <h1 class="display-4 wlcm">Welcome!</h1>
+        <p class="lead">We smash you with the information that will make your life easier. Really.</p>
+        <hr class="my-4 hz">
+
+      </div>
+      <br>
+    </div> 
+    <!-- END -->
+    <div class="col-sm-8 float-end container  bordered all-blogs" >
+      <h5 class="alert  text-dark text-warning  asticky blogs-head">Recently posted blogs <i class="fa fa-newspaper-o"></i></h5>
+      <!-- FETCH ALL BLOGS FROM DATABASE -->
+      <p *ngIf="articles?.length <= 0" class="no-data text-center">No blog Posted yet!</p>
+      <div *ngIf="articles?.length > 0">
+        <ul class="">
+            <li class="alert alert-light border-warning"  *ngFor="let article of articles; let i = index" [class.active]="i == currentIndex"
+            (click)="setCurrentArticle(article, i)" >
+                <p class="h5">{{article.title}} </p>
+                <div class="text-muted fs-6">{{article.createdAt.slice(0,10)}} 
+                  <i class="fa fa-heart alert-danger p-1 text-danger" aria-hidden="true">{{article.likes}}</i>
+                  <span class="text-success"> #{{article.category}}</span>
+                </div>
+                <div> 
+                  <div style="overflow: hidden;height:45px;" class=" float-start read-more-hidden">{{article.content}}</div>
+                </div>
+                <button class=" btn btn-outline-dark mt-1" routerLink="/show/{{article._id}}">Read more</button>
+            </li>
+        </ul>
+        </div>
+        </div>
+    </div>
+
+  

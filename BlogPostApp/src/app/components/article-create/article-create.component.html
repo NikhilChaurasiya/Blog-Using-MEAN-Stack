@@ -1,0 +1,48 @@
+<div style=" margin: auto;" class="new col-sm-6 container">
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="name">title</label>
+          <input
+            type="text" 
+            class="form-control"
+            id="title"
+            required
+            [(ngModel)]="article.title"
+            name="title"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="description">category</label>
+          <input 
+            class="form-control"
+            id="category"
+            required
+            [(ngModel)]="article.category"
+            name="category"
+          />
+        </div>
+        
+        <div class="form-group">
+          <label for="name">Content</label>
+          <textarea 
+            rows="5"
+            type="text"
+            class="form-control"
+            id="content"
+            [(ngModel)]="article.content"
+            name="content"
+          >
+          </textarea>
+        </div>
+
+        <button (click)="createArticle()" class="btn btn-success ms-2 mt-2 mb-2">Create</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h3>Blog Created Successfully!</h3>
+        <button class="btn btn-success" (click)="newArticle()">New..</button>
+      </div>
+    </div>
+  </div>

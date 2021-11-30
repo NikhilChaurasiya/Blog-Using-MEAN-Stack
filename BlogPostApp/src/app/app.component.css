@@ -1,0 +1,12 @@
+a{
+  text-decoration: none;
+  color:black;
+}
+.footer{
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  background-color: #f8eaab;
+  font-size: 13px;;
+}
+nav{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}

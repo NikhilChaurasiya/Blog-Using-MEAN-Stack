@@ -1,0 +1,61 @@
+<div style="margin: auto;" class="col-sm-7 p-5 details">
+    <div *ngIf="currentArticle" class="edit-form">
+      <h4 class="d-inline">Edit Blog <i class="fa fa-newspaper-o"></i></h4>
+      <button class="btn btn-danger btn-sm float-end" (click)="deleteArticle()">
+        <i class="fa fa-trash"></i>
+      </button>
+      <hr>
+      <form>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            [(ngModel)]="currentArticle.title"
+            name="title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <input
+            type="text"
+            class="form-control"
+            id="category"
+            [(ngModel)]="currentArticle.category"
+            name="category"
+          />
+        </div>
+        <div class="form-group txtarea">
+          <label for="category">Content</label>
+          <textarea
+            row="5"
+            type="text"
+            class="form-control"
+            id="content"
+            name="content"
+            [(ngModel)]="currentArticle.content"
+          >{{currentArticle.content}}</textarea>
+        </div>
+      </form>
+
+
+      <button class="btn btn-secondary mt-2" routerLink="">
+        Cancel
+      </button>
+
+      <button
+        type="submit"
+        class="btn btn-success mt-2 ms-3"
+        (click)="updateArticle()"
+      >
+        Update
+      </button>
+      <p></p>
+    </div>
+  
+    <div *ngIf="!currentArticle">
+      <br />
+      <p>Loading...</p>
+    </div>
+  </div>
